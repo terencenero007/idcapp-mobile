@@ -1,6 +1,6 @@
 {
   "name": "idcapp-mobile",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "idcapp-mobile: Mobile App for the Capita IDC users",
   "dependencies": {
     "gulp": "^3.5.6",
