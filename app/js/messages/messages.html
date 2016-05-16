@@ -1,0 +1,12 @@
+<ion-view view-title="Messages">
+  <ion-content>
+        <div class="list card" ng-repeat="message in messages.messages track by $index">
+            <div class="item item-body">
+                <strong><span ng-bind="message.title"></span></strong>
+                <p>
+                    <span ng-bind="message.content"></span>
+                </p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

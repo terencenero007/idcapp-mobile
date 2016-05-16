@@ -7,7 +7,7 @@
 
   'use strict';
 
-  angular.module('idc-mobile-app', ['ionic','idc-mobile-app.controllers','idc-mobile-app.service'])
+  angular.module('idc-mobile-app', ['ionic', 'config', 'messages'])
 
     .run(function ($ionicPlatform) {
       $ionicPlatform.ready(function () {
@@ -31,38 +31,20 @@
         .state('app', {
           url: '/app',
           abstract: true,
-          templateUrl: 'templates/menu.html',
-          controller: 'AppCtrl'
+          templateUrl: 'templates/menu.html'
         })
-
-        .state('app.search', {
-          url: '/search',
+        
+        .state('app.messages', {
+          url: '/messages',
           views: {
             'menuContent': {
-              templateUrl: 'templates/search.html'
-            }
-          }
-        })
-
-        .state('app.browse', {
-          url: '/browse',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/browse.html'
-            }
-          }
-        })
-        .state('app.events', {
-          url: '/events',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/events.html',
-              controller: 'EventssCtrl'
+              templateUrl: 'js/messages/messages.html',
+              controller: 'MessagesController as messages'
             }
           }
         });
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/events');
+      $urlRouterProvider.otherwise('/app/messages');
     });
 
 })();
