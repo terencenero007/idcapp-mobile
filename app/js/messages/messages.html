@@ -1,5 +1,10 @@
 <ion-view view-title="Messages">
-  <ion-content>
+    <ion-nav-buttons side="primary">
+        <button class="button button-clear" ng-click="messages.getMessages()">
+            <i class="icon ion-refresh"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
         <div class="list card" ng-repeat="message in messages.messages track by $index">
             <div class="item item-body">
                 <strong><span ng-bind="message.title"></span></strong>

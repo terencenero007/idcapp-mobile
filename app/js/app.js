@@ -7,7 +7,7 @@
 
   'use strict';
 
-  angular.module('idc-mobile-app', ['ionic', 'config', 'messages'])
+  angular.module('idc-mobile-app', ['ionic', 'config', 'commons', 'messages'])
 
     .run(function ($ionicPlatform) {
       $ionicPlatform.ready(function () {
@@ -25,7 +25,11 @@
           StatusBar.styleDefault();
         }
       });
-    }).config(function ($stateProvider, $urlRouterProvider) {
+    }).config(function ($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
+      
+      // Align menu title to center
+      $ionicConfigProvider.navBar.alignTitle('center');
+      
       $stateProvider
 
         .state('app', {
@@ -33,7 +37,7 @@
           abstract: true,
           templateUrl: 'templates/menu.html'
         })
-        
+
         .state('app.messages', {
           url: '/messages',
           views: {
